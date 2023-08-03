@@ -1,4 +1,4 @@
-## Running the example
+## Introduction
 
 To run the example, you need to have a working installation of [Docker](https://www.docker.com/) and docker-compose.
 
@@ -9,6 +9,12 @@ Change the value of `data_dir` in `src/main/application.yaml` to change that loc
 Camel will create a route that reads from `data_dir` and sends files to an AWS S3 bucket.
 By default, this example will upload files to an S3 bucket named `my-data` in localstack.
 
-
 The route is defined using the YAML DSL in `src/main/resources/routes/upload-route.yaml`.
 
+## Running the example
+
+From the root of this project, run:
+```shell
+docker-compose up -d
+mvn spring-boot:run
+```
