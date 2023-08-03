@@ -1,0 +1,9 @@
+- route:
+    id: file_to_s3
+    from:
+      uri: file:/tmp/test-data
+      steps:
+        - setHeader:
+            name: CamelAwsS3Key
+            simple: '${header.CamelFileAbsolutePath.replaceFirst("/tmp/", "")}'
+        - to: aws2-s3://my-data?autoCreateBucket=true&multiPartUpload=true&partSize=10485760&region=us-west-2

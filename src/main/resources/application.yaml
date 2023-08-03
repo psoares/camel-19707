@@ -1,0 +1,17 @@
+camel:
+  springboot:
+    name: merscope-upload-routes
+    main-run-controller: true
+    auto-startup: true
+    startup-summary-level: brief
+    routes-include-pattern: classpath:routes/*-route.yaml
+
+  component:
+    aws2-s3:
+      use-default-credentials-provider: false
+      access-key: EXAMPLE
+      secret-key: EXAMPLE
+      override-endpoint: true
+      uri-endpoint-override: http://127.0.0.1:4566
+
+data_dir: /tmp/test-data
